@@ -1,0 +1,295 @@
+/* Modern Hero Section - Red & Grey Theme */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #333333 0%,
+    #444444 100%
+  ); /* Dark grey gradient */
+  z-index: -2;
+}
+
+.hero-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 70%,
+      rgba(211, 47, 47, 0.15) 0%,
+      transparent 40%
+    ),
+    /* Red */
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(176, 176, 176, 0.1) 0%,
+        transparent 40%
+      ); /* Light grey */
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1503951914875-452162b0f3d1?ixlib=rb-4.0.1&auto=format&fit=crop&w=1350&q=80")
+    no-repeat center center/cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text {
+  color: #ffffff; /* White */
+}
+
+.logo-badge {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.logo-xv {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #d32f2f; /* Red */
+  line-height: 0.9;
+  letter-spacing: -2px;
+}
+
+.logo-barber {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff; /* White */
+  letter-spacing: 5px;
+  margin-left: 5px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #b0b0b0
+  ); /* White to light grey gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #b0b0b0; /* Light grey */
+  line-height: 1.6;
+  max-width: 90%;
+  margin-left: 50px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; /* This pushes buttons to the right */
+  margin-left: 100px; /* Adjust this value to move them right */
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #d32f2f; /* Red */
+  color: #ffffff; /* White */
+  border: 2px solid #d32f2f; /* Red */
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #d32f2f; /* Red */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3); /* Red shadow */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff; /* White */
+  border: 2px solid #ffffff; /* White */
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff; /* White */
+  color: #333333; /* Dark grey */
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-cut {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #d32f2f, #f44336); /* Red gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.featured-cut::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: url("../../assets/logo-zak.png") no-repeat center center/cover;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff; /* White */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.arrow {
+  width: 2px;
+  height: 20px;
+  background-color: #d32f2f; /* Red */
+  position: relative;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #d32f2f; /* Red */
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .featured-cut {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .logo-xv {
+    font-size: 4rem;
+  }
+
+  .logo-barber {
+    font-size: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 200px;
+    text-align: center;
+  }
+
+  .featured-cut {
+    width: 220px;
+    height: 220px;
+  }
+}
